@@ -1,0 +1,19 @@
+{
+  "name": "@cloudretail/shared",
+  "version": "1.0.0",
+  "description": "Shared utilities for CloudRetail microservices",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.5",
+    "joi": "^17.12.2",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.9.2",
+    "redis": "^4.6.13",
+    "winston": "^3.11.0",
+    "winston-daily-rotate-file": "^5.0.0"
+  }
+}

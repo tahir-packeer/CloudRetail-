@@ -1,0 +1,39 @@
+{
+  "name": "cloudretail-monorepo",
+  "version": "1.0.0",
+  "description": "CloudRetail Multi-Vendor E-Commerce Marketplace",
+  "private": true,
+  "workspaces": [
+    "services/*",
+    "frontend",
+    "shared"
+  ],
+  "scripts": {
+    "install-all": "npm install && npm install --workspaces",
+    "dev:auth": "npm run dev --workspace=services/auth-service",
+    "dev:catalog": "npm run dev --workspace=services/catalog-service",
+    "dev:cart": "npm run dev --workspace=services/cart-service",
+    "dev:order": "npm run dev --workspace=services/order-service",
+    "dev:payment": "npm run dev --workspace=services/payment-service",
+    "dev:analytics": "npm run dev --workspace=services/analytics-service",
+    "dev:gateway": "npm run dev --workspace=services/api-gateway",
+    "dev:frontend": "npm run dev --workspace=frontend",
+    "test": "npm run test --workspaces",
+    "test:coverage": "npm run test:coverage --workspaces",
+    "lint": "eslint . --ext .js,.jsx",
+    "lint:fix": "eslint . --ext .js,.jsx --fix",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "prettier": "^3.2.5"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}

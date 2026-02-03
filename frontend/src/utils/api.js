@@ -7,6 +7,12 @@ const api = axios.create({
   }
 });
 
+// Set initial token if exists
+const token = localStorage.getItem('token');
+if (token) {
+  api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+}
+
 // Request interceptor to add auth token
 api.interceptors.request.use(
   (config) => {
@@ -26,6 +32,7 @@ api.interceptors.response.use(
     if (error.response?.status === 401) {
       localStorage.removeItem('token');
       localStorage.removeItem('user');
+      delete api.defaults.headers.common['Authorization'];
       window.location.href = '/login';
     }
     return Promise.reject(error);

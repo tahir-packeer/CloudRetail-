@@ -10,7 +10,7 @@ IF NOT EXISTS payment_transactions
     id INT AUTO_INCREMENT PRIMARY KEY,
     transaction_id VARCHAR
 (255) NOT NULL UNIQUE,
-    order_id INT NOT NULL,
+    order_id INT NULL,
     buyer_id INT NOT NULL,
     amount DECIMAL
 (10, 2) NOT NULL,

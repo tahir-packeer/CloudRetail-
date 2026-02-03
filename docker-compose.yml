@@ -73,6 +73,7 @@ services:
       - DB_PORT=3306
       - DB_USER=root
       - DB_PASSWORD=CloudRetail@2026
+      - JWT_SECRET=your-super-secret-jwt-key-change-in-production
       - CATALOG_SERVICE_PORT=3002
       - STORAGE_TYPE=local
       - UPLOAD_DIR=/app/uploads
@@ -99,6 +100,7 @@ services:
       - DB_PORT=3306
       - DB_USER=root
       - DB_PASSWORD=CloudRetail@2026
+      - JWT_SECRET=your-super-secret-jwt-key-change-in-production
       - REDIS_HOST=redis
       - REDIS_PORT=6379
       - CART_SERVICE_PORT=3003
@@ -125,9 +127,11 @@ services:
       - DB_PORT=3306
       - DB_USER=root
       - DB_PASSWORD=CloudRetail@2026
+      - JWT_SECRET=your-super-secret-jwt-key-change-in-production
       - ORDER_SERVICE_PORT=3004
       - AUTH_SERVICE_URL=http://auth-service:3001
       - CATALOG_SERVICE_URL=http://catalog-service:3002
+      - CART_SERVICE_URL=http://cart-service:3003
       - PAYMENT_SERVICE_URL=http://payment-service:3005
     depends_on:
       mysql:
@@ -150,7 +154,9 @@ services:
       - DB_PORT=3306
       - DB_USER=root
       - DB_PASSWORD=CloudRetail@2026
+      - JWT_SECRET=your-super-secret-jwt-key-change-in-production
       - PAYMENT_SERVICE_PORT=3005
+      - ORDER_SERVICE_URL=http://order-service:3004
       - STRIPE_SECRET_KEY=${STRIPE_SECRET_KEY}
       - STRIPE_WEBHOOK_SECRET=${STRIPE_WEBHOOK_SECRET}
     depends_on:
@@ -174,6 +180,7 @@ services:
       - DB_PORT=3306
       - DB_USER=root
       - DB_PASSWORD=CloudRetail@2026
+      - JWT_SECRET=your-super-secret-jwt-key-change-in-production
       - ANALYTICS_SERVICE_PORT=3006
     depends_on:
       mysql:
@@ -193,6 +200,7 @@ services:
     environment:
       - NODE_ENV=production
       - PORT=3000
+      - JWT_SECRET=your-super-secret-jwt-key-change-in-production
       - AUTH_SERVICE_URL=http://auth-service:3001
       - CATALOG_SERVICE_URL=http://catalog-service:3002
       - CART_SERVICE_URL=http://cart-service:3003

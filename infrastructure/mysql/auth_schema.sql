@@ -58,9 +58,9 @@ CREATE TABLE IF NOT EXISTS seller_profiles (
 -- Insert default admin user (password: Password123!)
 INSERT INTO users (email, password_hash, first_name, last_name, role, status, email_verified)
 VALUES 
-('admin@cloudretail.com', '$2b$10$oOEpidhz.w0lX0IHMM83lOc/fbdGHhMThHM8Bl7VR9br8.WzBjjcq', 'System', 'Admin', 'admin', 'active', TRUE),
-('seller@cloudretail.com', '$2b$10$oOEpidhz.w0lX0IHMM83lOc/fbdGHhMThHM8Bl7VR9br8.WzBjjcq', 'Demo', 'Seller', 'seller', 'active', TRUE),
-('buyer@cloudretail.com', '$2b$10$oOEpidhz.w0lX0IHMM83lOc/fbdGHhMThHM8Bl7VR9br8.WzBjjcq', 'Demo', 'Buyer', 'buyer', 'active', TRUE)
+('admin@cloudretail.com', '$2b$10$MIklRnZ2/QjTshUwXS1zDeo35pSqVCuBCfbEcg7ppWZ.5tGVM0fqe', 'System', 'Admin', 'admin', 'active', TRUE),
+('seller@cloudretail.com', '$2b$10$MIklRnZ2/QjTshUwXS1zDeo35pSqVCuBCfbEcg7ppWZ.5tGVM0fqe', 'Demo', 'Seller', 'seller', 'active', TRUE),
+('buyer@cloudretail.com', '$2b$10$MIklRnZ2/QjTshUwXS1zDeo35pSqVCuBCfbEcg7ppWZ.5tGVM0fqe', 'Demo', 'Buyer', 'buyer', 'active', TRUE)
 ON DUPLICATE KEY UPDATE id=id;
 
 -- Insert seller profile for demo seller
